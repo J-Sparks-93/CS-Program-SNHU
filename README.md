@@ -1,3 +1,4 @@
-#this repository is for documenting projects,
-Creating a sample of my work throughout 
-My program at SNHU. 
+DriverPass is a system that was introduced as a study tool for new drivers who are having issues with obtaining their driver’s license. Our client was the company DriverPass, with their mission to provide tools to help students pass their driver’s test. 
+I obtained user requirements and derived the basic concept of system design from interviews provided for this course. It gave a firsthand review of exactly what the client was wanting designed and the problems needing to be addressed for a specific market of the client. 
+In general, I think I implemented and retained the nature and design of the various UML diagrams this course. I have been introduced to them in previous courses but had very limited exposure to UML diagrams before this course. If I had to revise any part of my project, I would revise my presentation to include opening and closing statements. 
+ 

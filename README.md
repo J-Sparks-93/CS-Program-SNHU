@@ -1,8 +1,5 @@
-#this repository is for documenting projects,
-Creating a sample of my work throughout 
-My program at SNHU. 
 
-To help with navigation, I have broken my repsoitory down based on each course. 
-Please locate the appropriate brach by locating the course number in which 
-you're seeking. 
-Thank you. 
+
+Throughout this course I've been tasked with thinking differently about coding. As most courses have focused on designing code to be non-repetitive, simple and clean to minimize bugs, this course has taught me how to think and observe code in the realm of software testing and quality. Though code may be technically sound, it could still harbor a variety of unintended operations that may effect the over all quality of the software and effect the user experience in the end. Combining the ideaologies, that aren't completely unrelated, makes me consider multiple facets and the need to consider when to limit user input, options that a user can access, and to validate anything a user can manipulate. 
+
+User input from conception, with the idea of what the user wants helps create and shape the basic ideas of how software should operate. As a programmer, you can still take creative liberties on how to get the programming to perform specific tasks. User input throughout the design and development process helps programmers adapt to the ever changing needs of the user, allows programmers to focus ideas and change them into functioning products, and allows for users to feel seen and heard within the development process. 

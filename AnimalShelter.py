@@ -31,9 +31,12 @@ class AnimalShelter(object):
         self.collection = self.database ['%s' % (COL)]
 
     #This method is used to create documents for the database.
-    def create(self, data):
-        if data is not None:
-            insert = self.database.animals.insert_one(data)
+    
+    #So far I have updated the naming conventions to better suit what the functions of the variables. - Jeffrey Sparks
+    
+    def create(self, createData):
+        if document is not None:
+            insert = self.database.animals.insert_one(createData)
             if insert != 0:
                 return True
                 print('True')
@@ -42,9 +45,9 @@ class AnimalShelter(object):
             raise Exception("Nothing to save, because data parameter is empty")
     
     #This method is used to read documents from the database
-    def read(self, data):
+    def read(self, readData):
         if data is not None:
-            return self.database.animals.find(data)
+            return self.database.animals.find(readData)
         else:
             raise Exception("Nothing to read, because data parameter is empty")
 
@@ -64,21 +67,23 @@ class AnimalShelter(object):
         return _data
         
     #This method creates the update function, updating the data within the database.
-    def update(self, initial, data):
+    def update(self, initialData, updatedData):
         if initial is not None:
-            if self.database.animals.count_documents(initial, limit = 1) != 0:
-                update_result = self.database.animals.update_many(initial,{"$set":data})
+            if self.database.animals.count_documents(initialData, limit = 1) != 0:
+                update_result = self.database.animals.update_many(initialData,{"$set":updatedData})
                 result = update_result.raw_result
                 return result
                 
         else:
             raise Exception("Nothing to update, because data parameter is empty")
+
+   
             
     #This method implements the delete function, this allows you to delete documents from the database
-    def delete(self, data):
+    def delete(self, deletedData):
         if data is not None:
-            if self.database.animals.count_documents(data, limit = 1) != 0:
-                delete_result = self.database.animals.delete_many(data)
+            if self.database.animals.count_documents(deletedData, limit = 1) != 0:
+                delete_result = self.database.animals.delete_many(deletedData)
                 result = delete_result.raw_result
                 return result
             

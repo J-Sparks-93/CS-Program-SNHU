@@ -29,7 +29,8 @@ class AnimalShelter(object):
         self.client = MongoClient('mongodb://%s:%s@%s:%d' % (USER, PASS, HOST, PORT))
         self.database = self.client['%s' % (DB)]
         self.collection = self.database ['%s' % (COL)]
-        
+
+    #This method is used to create documents for the database.
     def create(self, data):
         if data is not None:
             insert = self.database.animals.insert_one(data)
@@ -39,14 +40,16 @@ class AnimalShelter(object):
             
         else:
             raise Exception("Nothing to save, because data parameter is empty")
-    #Implement read method
+    
+    #This method is used to read documents from the database
     def read(self, data):
         if data is not None:
             return self.database.animals.find(data)
         else:
             raise Exception("Nothing to read, because data parameter is empty")
-            
-     #Get records with criteria
+
+    #This function sets up "GetRecords" which pulls multipole documents instead of a single document
+    #Get records with criteria(Keywords for query search)
     #All records are returned if criteria is None
     #Default is None
     #Example: ({""name": "Rex", 'age_upon_outcome': '2 months'})
@@ -59,7 +62,8 @@ class AnimalShelter(object):
             _data = self.database.animals.find({},{'_id' : 0})
                                   
         return _data
-    #Implement update method
+        
+    #This method creates the update function, updating the data within the database.
     def update(self, initial, data):
         if initial is not None:
             if self.database.animals.count_documents(initial, limit = 1) != 0:
@@ -69,7 +73,8 @@ class AnimalShelter(object):
                 
         else:
             raise Exception("Nothing to update, because data parameter is empty")
-    #Implement delete method
+            
+    #This method implements the delete function, this allows you to delete documents from the database
     def delete(self, data):
         if data is not None:
             if self.database.animals.count_documents(data, limit = 1) != 0:

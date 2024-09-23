@@ -11,7 +11,7 @@ class AnimalShelter(object):
     def __init__(self, username, password):
         #Initializing the MongoClient. This helps to
         # access the MongoDB databases and collections.
-        # This is hardwired to use the aac database, the andimals collection, and the aacuser.
+        # This is hardwired to use the aac database, the animals collection, and the aacuser.
         # Definitions of the connection string variables are unique to the individual Apporto environments. 
         # you must edit the connection variables below to reflect your own instance of MongoDB!
         
